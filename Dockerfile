@@ -9,6 +9,8 @@ RUN  apk add --update --no-cache bash python3 jq ca-certificates groff less \
   && apk add --update --no-cache --virtual build-deps py-pip curl \
   && pip install --upgrade --no-cache-dir awscli${AWSCLI_VERSION}
 
+RUN ln -s /usr/bin/awsv2 /usr/local/bin/aws
+
 RUN  curl -sLo /usr/local/bin/kops https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64 
 RUN curl -sLo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl 
 RUN curl -L https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz | tar xvz && mv linux-amd64/helm /usr/local/bin/helm 
