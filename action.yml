@@ -1,0 +1,17 @@
+name: "Github Action for Helm/awscli/eksctl/kubectl"
+description: "Github Action for Helm/awscli/eksctl/kubectl"
+branding:
+  icon: 'anchor'  
+  color: 'blue'
+inputs:
+  command:
+    description: "Your command (kubectl or helm)"
+    required: true
+outputs:
+  result:
+    description: "Output returned by your Helm or kubectl command"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.command }}
