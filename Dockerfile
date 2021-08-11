@@ -3,7 +3,7 @@ FROM alpine:latest
 ARG AWSCLI_VERSION=v2
 ARG KOPS_VERSION=1.14.0
 ARG KUBECTL_VERSION=v1.16.2
-ARG HELM_VERSION=v2.17.0
+ARG HELM_VERSION=v3.6.3
 
 RUN  apk add --update --no-cache bash python3 jq ca-certificates groff less \
   && apk add --update --no-cache --virtual build-deps py-pip curl \
