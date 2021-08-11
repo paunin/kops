@@ -18,3 +18,5 @@ RUN chmod +x /usr/local/bin/kops /usr/local/bin/kubectl /usr/local/bin/helm /usr
 
 RUN  apk del --purge build-deps \
   && rm -f /var/cache/apk/*
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]:
