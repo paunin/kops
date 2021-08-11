@@ -1,3 +1,3 @@
 # paunin/kops
 
-Simple  docker image with kubectl, kops, awscli, helm
+Simple  docker image with kubectl, kops, awscli, helm, eksctl
